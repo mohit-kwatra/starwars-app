@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: 100vh;
+  background-color: rgb(210, 210, 210) !important;
+  color: #000 !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.character-details {
+  flex-basis: 40%;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 1s;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+              -2px -2px 5px rgba(255,255,255,0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h3 {
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+img {
+  clip-path: circle(40%);
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+p.character-hw {
+  margin-bottom: 20px;
+}
+
+.character-details a {
+  text-decoration: none;
+  color: blue;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black !important;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+              -2px -2px 5px rgba(255,255,255,0.5);
+  transition: 0.3s;
+}
+
+.btn-clicked {
+  animation: animateBtn .3s ease-in-out 0s 1;
+}
+
+@keyframes animateBtn {
+  0%{
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+                -2px -2px 5px rgba(255,255,255,0.5);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    box-shadow: 2px 2px 5px inset rgba(0,0,0,0.3),
+                -2px -2px 5px inset rgba(255,255,255,0.5);
   }
+  100% {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+                -2px -2px 5px rgba(255,255,255,0.5);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .character-details {
+    flex-basis: 70%;
+  } 
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .character-details {
+    flex-basis: 90%;
+  } 
 }
